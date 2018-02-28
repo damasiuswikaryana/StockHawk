@@ -37,5 +37,7 @@
     <string name="stock_server_limit">Server has been reach the request limit!</string>
     <string name="stock_unknown">Unknown stock!</string>
     <string name="stock_error">Unknown error!</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
 
 </resources>
