@@ -23,7 +23,6 @@ public final class PrefUtils {
         HashSet<String> defaultStocks = new HashSet<>(Arrays.asList(defaultStocksList));
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
 
-
         boolean initialized = prefs.getBoolean(initializedKey, false);
 
         if (!initialized) {
@@ -34,7 +33,6 @@ public final class PrefUtils {
             return defaultStocks;
         }
         return prefs.getStringSet(stocksKey, new HashSet<String>());
-
     }
 
     private static void editStockPref(Context context, String symbol, Boolean add) {
@@ -74,18 +72,14 @@ public final class PrefUtils {
         String percentageKey = context.getString(R.string.pref_display_mode_percentage_key);
 
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
-
         String displayMode = getDisplayMode(context);
 
         SharedPreferences.Editor editor = prefs.edit();
-
         if (displayMode.equals(absoluteKey)) {
             editor.putString(key, percentageKey);
         } else {
             editor.putString(key, absoluteKey);
         }
-
         editor.apply();
     }
-
 }
